@@ -1,0 +1,25 @@
+{
+  "overview": "Givethra is a global trust-based humanitarian platform connecting verified Help Seekers with Heroes who support real needs directly.",
+  "features": [
+    "Browse and discover verified help cases by category and location",
+    "Help Seekers submit cases with document uploads and pay a $1 listing fee",
+    "Heroes unlock full case details for $2 to support directly",
+    "Heroes submit proof of support after helping",
+    "Admin verification workflow moving cases through verification states",
+    "Proud Heart recognition system — one per completed case",
+    "Hero and Help Seeker profiles with trust scores and achievement badges",
+    "Role-based access for Heroes, Help Seekers, and Admins",
+    "Stripe payments for listing and unlock fees",
+    "Light and dark mode with mobile-first design"
+  ],
+  "category": "humanitarian-platform",
+  "tags": [
+    "humanitarian",
+    "charity",
+    "verification",
+    "trust",
+    "direct-help",
+    "social-impact"
+  ],
+  "last_updated": "2026-06-05T21:14:46.119Z"
+}

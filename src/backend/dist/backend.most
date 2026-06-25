@@ -1,0 +1,380 @@
+// Version: 4.0.0
+type AccessControlState__836714403 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__222667396<Principal, UserRole__686137147>
+  };
+type Achievement__625435981 =
+  {
+    #CommunityHero;
+    #EducationHero;
+    #FiftyPeopleHelped;
+    #FirstSupport;
+    #MedicalHero;
+    #TenPeopleHelped;
+    #TrustedHero
+  };
+type Achievement__944492053 =
+  {
+    #CommunityHero;
+    #EducationHero;
+    #FiftyPeopleHelped;
+    #FirstSupport;
+    #MedicalHero;
+    #TenPeopleHelped;
+    #TrustedHero
+  };
+type CaseState__764442058 = {var nextCaseId : Nat; var nextProofId : Nat};
+type CaseUnlock__643370151 =
+  {
+    caseId : Nat;
+    heroId : UserId__158757552;
+    unlockedAt : Timestamp__301639476
+  };
+type CaseUnlock__675305759 =
+  {
+    caseId : Nat;
+    heroId : UserId__405479026;
+    unlockedAt : Timestamp__280411521
+  };
+type Case__124791317 =
+  {
+    var adminNote : ?Text;
+    var amountNeeded : USDCents__822336009;
+    category : Category__1042806510;
+    city : City__854196687;
+    country : Country__394186858;
+    createdAt : Timestamp__280411521;
+    createdBy : UserId__405479026;
+    deadline : Timestamp__280411521;
+    var description : Text;
+    var documents : [FileRef__357360887];
+    id : Nat;
+    var isPublic : Bool;
+    var title : Text;
+    var verificationStatus : VerificationStatus__866672215
+  };
+type Case__874865401 =
+  {
+    var adminNote : ?Text;
+    var amountNeeded : USDCents__951099481;
+    category : Category__808231662;
+    city : City__1073042053;
+    country : Country__725964590;
+    createdAt : Timestamp__301639476;
+    createdBy : UserId__158757552;
+    deadline : Timestamp__301639476;
+    var description : Text;
+    var documents : [FileRef__939992998];
+    id : Nat;
+    var isPublic : Bool;
+    var title : Text;
+    var verificationStatus : VerificationStatus__702402367
+  };
+type Category__1042806510 =
+  {
+    #Books;
+    #DebtRelief;
+    #DisabilitySupport;
+    #Education;
+    #EmergencyNeeds;
+    #Employment;
+    #Food;
+    #Housing;
+    #Medical;
+    #Medicines;
+    #Orphans;
+    #Other;
+    #SchoolFees;
+    #Surgery;
+    #Transportation;
+    #Uniform;
+    #UniversityFees;
+    #Utilities;
+    #Widows
+  };
+type Category__808231662 =
+  {
+    #Books;
+    #DebtRelief;
+    #DisabilitySupport;
+    #Education;
+    #EmergencyNeeds;
+    #Employment;
+    #Food;
+    #Housing;
+    #Medical;
+    #Medicines;
+    #Orphans;
+    #Other;
+    #SchoolFees;
+    #Surgery;
+    #Transportation;
+    #Uniform;
+    #UniversityFees;
+    #Utilities;
+    #Widows
+  };
+type City__1073042053 = Text;
+type City__854196687 = Text;
+type Country__394186858 = Text;
+type Country__725964590 = Text;
+type Data__80296667<K, V> =
+  {var count : Nat__1040412405; kvs : [var ?(K, V)]};
+type FeeType__553529187 = {#ListingFee; #UnlockFee};
+type FeeType__705696306 = {#ListingFee; #UnlockFee};
+type FileRef__357360887 =
+  {fileName : Text; mimeType : Text; storageId : Text};
+type FileRef__939992998 =
+  {fileName : Text; mimeType : Text; storageId : Text};
+type HelpSeekerStats__322064965 =
+  {
+    var requestsApproved : Nat;
+    var requestsCompleted : Nat;
+    var requestsSubmitted : Nat
+  };
+type HelpSeekerStats__895218245 =
+  {
+    var requestsApproved : Nat;
+    var requestsCompleted : Nat;
+    var requestsSubmitted : Nat
+  };
+type HeroStats__641124266 =
+  {
+    var achievements : [Achievement__944492053];
+    var casesCompleted : Nat;
+    var casesSupported : Nat;
+    var peopleHelped : Nat;
+    var proudHeartCount : Nat
+  };
+type HeroStats__86579237 =
+  {
+    var achievements : [Achievement__625435981];
+    var casesCompleted : Nat;
+    var casesSupported : Nat;
+    var peopleHelped : Nat;
+    var proudHeartCount : Nat
+  };
+type Internal__41346355<K, V> =
+  {children : [var ?Node__1000929467<K, V>]; data : Data__80296667<K, V>};
+type Leaf__712614010<K, V> = {data : Data__80296667<K, V>};
+type List__529703492<T> =
+  {
+    var blockIndex : Nat__1040412405;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__1040412405
+  };
+type List__560604548<T> = List__529703492<T>;
+type Map__222667396<K, V> = Map__912772452<K, V>;
+type Map__709709801<K, V> =
+  {var root : Node__1000929467<K, V>; var size : Nat__1040412405};
+type Map__912772452<K, V> = Map__709709801<K, V>;
+type Nat__1040412405 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__540642602 =
+  {
+    accessControlState : AccessControlState__836714403;
+    caseState : CaseState__764442058;
+    cases : Map__222667396<Nat, Case__124791317>;
+    helpSeekerStats :
+      Map__222667396<UserId__405479026, HelpSeekerStats__895218245>;
+    heroStats : Map__222667396<UserId__405479026, HeroStats__86579237>;
+    paymentState : PaymentState__698265574;
+    payments : List__560604548<Payment__647720668>;
+    proofs : List__560604548<SupportProof__891863517>;
+    proudHearts : List__560604548<ProudHeart__616491129>;
+    stripeConfig : StripeConfig__607330215;
+    unlocks : Map__222667396<Text, CaseUnlock__675305759>;
+    users : Map__222667396<UserId__405479026, User__522892389>;
+    wallets : List__560604548<WalletEntry__1016679687>
+  };
+type Node__1000929467<K, V> =
+  {#internal : Internal__41346355<K, V>; #leaf : Leaf__712614010<K, V>};
+type OldActor__416176194 = {};
+type PaymentState__698265574 =
+  {var nextPaymentId : Nat; var nextWalletId : Nat};
+type PaymentStatus__293368000 = {#Confirmed; #Failed; #Pending};
+type PaymentStatus__296016569 = {#Confirmed; #Failed; #Pending};
+type Payment__149302498 =
+  {
+    amountCents : USDCents__951099481;
+    caseId : ?Nat;
+    createdAt : Timestamp__301639476;
+    feeType : FeeType__553529187;
+    id : Nat;
+    paidBy : UserId__158757552;
+    var status : PaymentStatus__296016569;
+    stripeSessionId : Text
+  };
+type Payment__647720668 =
+  {
+    amountCents : USDCents__822336009;
+    caseId : ?Nat;
+    createdAt : Timestamp__280411521;
+    feeType : FeeType__705696306;
+    id : Nat;
+    paidBy : UserId__405479026;
+    var status : PaymentStatus__293368000;
+    stripeSessionId : Text
+  };
+type ProudHeart__178329562 =
+  {
+    awardedAt : Timestamp__301639476;
+    caseId : Nat;
+    fromHelpSeeker : UserId__158757552;
+    toHero : UserId__158757552
+  };
+type ProudHeart__616491129 =
+  {
+    awardedAt : Timestamp__280411521;
+    caseId : Nat;
+    fromHelpSeeker : UserId__405479026;
+    toHero : UserId__405479026
+  };
+type ReviewStatus__386089990 =
+  {#Approved; #Completed; #Rejected; #Submitted; #UnderReview};
+type ReviewStatus__763925257 =
+  {#Approved; #Completed; #Rejected; #Submitted; #UnderReview};
+type Role__300349085 = {#Admin; #HelpSeeker; #Hero};
+type Role__686437258 = {#Admin; #HelpSeeker; #Hero};
+type StripeConfig__607330215 = {var config : ?StripeConfiguration__689598317};
+type StripeConfiguration__689598317 =
+  {allowedCountries : [Text]; secretKey : Text};
+type StripeConfiguration__87721349 =
+  {allowedCountries : [Text]; secretKey : Text};
+type SupportProof__891863517 =
+  {
+    var adminNote : ?Text;
+    caseId : Nat;
+    createdAt : Timestamp__280411521;
+    var files : [FileRef__357360887];
+    heroId : UserId__405479026;
+    id : Nat;
+    var referenceNumber : ?Text;
+    var status : ReviewStatus__763925257
+  };
+type SupportProof__948418455 =
+  {
+    var adminNote : ?Text;
+    caseId : Nat;
+    createdAt : Timestamp__301639476;
+    var files : [FileRef__939992998];
+    heroId : UserId__158757552;
+    id : Nat;
+    var referenceNumber : ?Text;
+    var status : ReviewStatus__386089990
+  };
+type Timestamp__280411521 = Int;
+type Timestamp__301639476 = Int;
+type USDCents__822336009 = Nat;
+type USDCents__951099481 = Nat;
+type UserId__158757552 = Principal;
+type UserId__405479026 = Principal;
+type UserRole__686137147 = {#admin; #guest; #user};
+type User__522892389 =
+  {
+    var avatarRef : ?FileRef__357360887;
+    var country : Country__394186858;
+    createdAt : Timestamp__280411521;
+    var email : Text;
+    var fullName : Text;
+    id : UserId__405479026;
+    var isActive : Bool;
+    var role : Role__686437258
+  };
+type User__98118558 =
+  {
+    var avatarRef : ?FileRef__939992998;
+    var country : Country__725964590;
+    createdAt : Timestamp__301639476;
+    var email : Text;
+    var fullName : Text;
+    id : UserId__158757552;
+    var isActive : Bool;
+    var role : Role__300349085
+  };
+type VerificationStatus__702402367 =
+  {#DocumentsSubmitted; #InstitutionVerified; #Unverified};
+type VerificationStatus__866672215 =
+  {#DocumentsSubmitted; #InstitutionVerified; #Unverified};
+type WalletEntry__1016679687 =
+  {
+    amountCents : USDCents__822336009;
+    createdAt : Timestamp__280411521;
+    feeType : FeeType__705696306;
+    id : Nat;
+    paymentId : Nat;
+    userId : UserId__405479026
+  };
+type WalletEntry__572183837 =
+  {
+    amountCents : USDCents__951099481;
+    createdAt : Timestamp__301639476;
+    feeType : FeeType__553529187;
+    id : Nat;
+    paymentId : Nat;
+    userId : UserId__158757552
+  };
+{
+  "20260605_000000_InitialState" : OldActor__416176194 -> NewActor__540642602
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__222667396<Principal, UserRole__686137147>
+    };
+  stable caseState : {var nextCaseId : Nat; var nextProofId : Nat};
+  stable cases :
+    {
+      var root : Node__1000929467<Nat, Case__874865401>;
+      var size : Nat__1040412405
+    };
+  stable helpSeekerStats :
+    {
+      var root :
+        Node__1000929467<UserId__158757552, HelpSeekerStats__322064965>;
+      var size : Nat__1040412405
+    };
+  stable heroStats :
+    {
+      var root : Node__1000929467<UserId__158757552, HeroStats__641124266>;
+      var size : Nat__1040412405
+    };
+  stable paymentState : {var nextPaymentId : Nat; var nextWalletId : Nat};
+  stable payments :
+    {
+      var blockIndex : Nat__1040412405;
+      var blocks : [var [var ?Payment__149302498]];
+      var elementIndex : Nat__1040412405
+    };
+  stable proofs :
+    {
+      var blockIndex : Nat__1040412405;
+      var blocks : [var [var ?SupportProof__948418455]];
+      var elementIndex : Nat__1040412405
+    };
+  stable proudHearts :
+    {
+      var blockIndex : Nat__1040412405;
+      var blocks : [var [var ?ProudHeart__178329562]];
+      var elementIndex : Nat__1040412405
+    };
+  stable stripeConfig : {var config : ?StripeConfiguration__87721349};
+  stable unlocks :
+    {
+      var root : Node__1000929467<Text, CaseUnlock__643370151>;
+      var size : Nat__1040412405
+    };
+  stable users :
+    {
+      var root : Node__1000929467<UserId__158757552, User__98118558>;
+      var size : Nat__1040412405
+    };
+  stable wallets :
+    {
+      var blockIndex : Nat__1040412405;
+      var blocks : [var [var ?WalletEntry__572183837]];
+      var elementIndex : Nat__1040412405
+    }
+};
